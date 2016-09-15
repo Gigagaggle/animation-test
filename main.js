@@ -4,6 +4,8 @@ ad.init = function(){
 	console.log("works");
 	
 	var tl1 = new TimelineMax();
+	var bannerWidth = $("#banner").width();
+	var textPosition = bannerWidth*.4;
 
 	tl1.to('#banner-link', .4, { opacity:1,  ease: Power2.easeOut }, '+=4')
 	.to('#banner-txt1', .5, { opacity: 0, ease: Power2.easeNone }, '+=.25')
@@ -11,7 +13,7 @@ ad.init = function(){
 	.to('#banner-img2', .5, { opacity: 1, ease: Power2.easeNone}, '-=.7')
 	.to('#banner-txt1', .25, { opacity: 0, ease: Power2.easeNone })
 	.to('#banner-txt2', .6, { left: 0, opacity: 1, ease: Power2.easeNone })
-	.to('#banner-txt3', .6, {opacity: 1, left: 320, ease: Power2.easeNone }, '+=.25')
+	.to('#banner-txt3', .6, {opacity: 1, left: textPosition,  ease: Power2.easeNone }, '+=.25')
 	.to('#banner-img2', 2, {backgroundPositionX: 0, ease: Power0.easeNone })
 
 	.to('#banner-img2', 2, {backgroundSize: '-=100%', ease: SlowMo.ease.config(0.3, 0.1, false), y: 0 } )
@@ -29,6 +31,8 @@ ad.init = function(){
 	function over() { 
 		tm1.restart(); 
 	}
+	console.log(bannerWidth);
+	console.log(textPosition);
 
 };
 
